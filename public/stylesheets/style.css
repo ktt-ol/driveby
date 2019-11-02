@@ -32,3 +32,8 @@ td {
 .bg-lightdark{
   background-color: gray;
 }
+.smallfont {
+  display: block;
+  padding-top: 10px;
+  font-size: 1rem !important;
+}

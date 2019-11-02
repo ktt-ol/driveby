@@ -5,26 +5,35 @@ mixin card(drive)
         - if(drive.delay){
         td.red +#{drive.delay} 
         - }else{
-        td 
+        td &nbsp;&nbsp;&nbsp;&nbsp;
         -}
 
-        - if(drive.delay){
+        - if(drive.delay != 0){
         td.green  #{drive.realdepature} 
+        - }else if(drive.delay == 0){
+        td.green  #{drive.departure}
         - }else{
         td &nbsp;
-        -}
+        - }
 
         - if(drive.track){
         td.blue Gleis #{drive.track} 
         - }else{
-        td.darkblue Hbf-Süd
+        td.darkblue &nbsp;
         -}
 
         td #{drive.vehicle}
-        td #{drive.station}
+        
+        - if(drive.via){
+        td.smallfont #{drive.via} 
+        - }else{
+        td &nbsp;
+        -}
 
-        - if(drive.info){
-        td.yellow #{drive.info} 
+        td #{drive.destination}
+        
+        - if(drive.info.delay || drive.info.qos){
+        td.yellow #{drive.info.delay} #{drive.info.qos} 
         - }else{
         td &nbsp;
         -}
