@@ -1,5 +1,10 @@
 mixin card(drive)
-    tr
+    tr  
+        - if(drive.arrival){
+        td.darkgrey #{drive.arrival} 
+        - }else{
+        td.darkblue &nbsp;
+        -}
         td #{drive.departure}
 
         - if(drive.delay){
@@ -17,13 +22,13 @@ mixin card(drive)
         - }
 
         - if(drive.track){
-        td.blue Gleis #{drive.track} 
+        td.blue #{drive.track} 
         - }else{
         td.darkblue &nbsp;
         -}
 
         td #{drive.vehicle}
-        
+
         - if(drive.via){
         td.smallfont #{drive.via} 
         - }else{

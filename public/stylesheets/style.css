@@ -32,6 +32,9 @@ td {
 .bg-lightdark{
   background-color: gray;
 }
+.darkgrey{
+  color: #777;
+}
 .smallfont {
   display: block;
   padding-top: 10px;

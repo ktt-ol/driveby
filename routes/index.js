@@ -60,18 +60,22 @@ let processJSON = (d)=>{
 
   for(let index in d){
     if(d[index].destination != __FROMSTATION){
-      
+      realDepature = "";
       let depHr = d[index].scheduledDeparture.split(":",2)[0];
       depHr = parseInt(depHr);
 
       let depMin = d[index].scheduledDeparture.split(":",2)[1];
       depMin = parseInt(depMin);
 
-      let delay = d[index].delayDeparture;
-      if(depMin+delay >= 60){      
-        let overshoot = (depMin+delay)-60;
+      let delay = d[index].delayDeparture || 0;
+      let overshoot = (depMin+delay)-60;
+      if(overshoot > 0){      
         if(overshoot<10){
-          realDepature = (depHr+1)+":0"+(overshoot);
+          if(depHr == 23){
+            realDepature = "00:0"+(overshoot);
+          }else{
+            realDepature = (depHr+1)+":0"+(overshoot);
+          }
         }else{
           realDepature = (depHr+1)+":"+(overshoot);
         }
@@ -84,6 +88,7 @@ let processJSON = (d)=>{
       }
       let info = "";
       destinations[tmp] = {
+        'arrival': d[index].scheduledArrival,
         'departure': d[index].scheduledDeparture,
         'realdepature': realDepature,
         'delay': d[index].delayArrival,

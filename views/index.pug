@@ -8,5 +8,15 @@ block content
   .card.bg-dark.border-info
     .card-body
       table.table.table-striped.table-dark.table-responsive.table-sm
+        tr 
+          th Arrival
+          th Departure
+          th Delay
+          th New Departure
+          th Track
+          th Train
+          th Via
+          th Destination
+          th
         for destination in data
           +train(destination)
