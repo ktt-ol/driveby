@@ -1,25 +1,30 @@
 mixin card(drive)
     tr
-        td #{drive.departure} 
+        td #{drive.departure}
+
         - if(drive.delay){
-            td.red.d-inline +#{drive.delay} 
+        td.red +#{drive.delay} 
         - }else{
-            td &nbsp;
+        td 
         -}
+
         - if(drive.delay){
-            td.green.d-inline  #{drive.realdepature} 
+        td.green  #{drive.realdepature} 
         - }else{
-            td &nbsp;
+        td &nbsp;
         -}
+
+        - if(drive.track){
+        td.blue Gleis #{drive.track} 
+        - }else{
+        td &nbsp;
+        -}
+
         td #{drive.vehicle}
         td #{drive.station}
-        - if(drive.track){
-            td.blue.d-inline :: Gleis #{drive.track} 
-        - }else{
-            td &nbsp;
-        -}
+
         - if(drive.info){
-            td.white #{drive.info} 
+        td.white #{drive.info} 
         - }else{
-            td &nbsp;
+        td &nbsp;
         -}

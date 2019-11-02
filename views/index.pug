@@ -4,8 +4,8 @@ include blocks/bus
 include blocks/train
 
 block content
-  .card.bg-dark
-    .card-header
-      table.table.table-striped.table-dark
+  .card.bg-dark.border-info
+    .card-body
+      table.table.table-striped.table-dark.table-responsive
         for destination in data
           +train(destination)
