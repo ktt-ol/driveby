@@ -82,6 +82,7 @@ let processJSON = (d)=>{
           realDepature = depHr+":"+(depMin+delay);
         }
       }
+      let info = "";
       destinations[tmp] = {
         'departure': d[index].scheduledDeparture,
         'realdepature': realDepature,
@@ -89,7 +90,7 @@ let processJSON = (d)=>{
         'vehicle': d[index].train,
         'destination': d[index].destination, 
         'track': d[index].platform,
-        'info': d[index].messages,
+        'info': info,
         'isCancelled': d[index].isCancelled,
         'via': d[index].via,
       };
