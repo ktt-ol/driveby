@@ -1,0 +1,17 @@
+mixin card(drive)
+    .card.col-12
+        .card-body
+            .card-title 
+                strong 
+                    | #{drive.departure} 
+                    - if(drive.delay){
+                    strong.red.d-inline +#{drive.delay} 
+                    | ::
+                    - }
+                    - if(drive.delay){
+                    strong.green.d-inline  #{drive.realdepature} 
+                    - }
+                    |-
+                    | #{drive.station}
+            if drive.info
+                p.card-text #{drive.info}

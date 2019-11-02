@@ -1,0 +1,8 @@
+extends layout
+
+include blocks/bus
+include blocks/train
+
+block content
+  for destination in data
+    +train(destination)
