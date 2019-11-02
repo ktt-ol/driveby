@@ -1,20 +1,25 @@
 mixin card(drive)
-    .card.bg-dark.col-12.border-light
-        .card-title 
-            strong 
-                | #{drive.departure} 
-                - if(drive.delay){
-                strong.red.d-inline +#{drive.delay} 
-                | ::
-                - }
-                - if(drive.delay){
-                strong.green.d-inline  #{drive.realdepature} 
-                - }
-                |-
-                | #{drive.station}
-                - if(drive.track){
-                strong.blue.d-inline  :: Gleis #{drive.track} 
-                - }
-        if drive.info
-            .card-body
-                p.card-text.white #{drive.info}
+    tr
+        td #{drive.departure} 
+        - if(drive.delay){
+            td.red.d-inline +#{drive.delay} 
+        - }else{
+            td &nbsp;
+        -}
+        - if(drive.delay){
+            td.green.d-inline  #{drive.realdepature} 
+        - }else{
+            td &nbsp;
+        -}
+        td #{drive.vehicle}
+        td #{drive.station}
+        - if(drive.track){
+            td.blue.d-inline :: Gleis #{drive.track} 
+        - }else{
+            td &nbsp;
+        -}
+        - if(drive.info){
+            td.white #{drive.info} 
+        - }else{
+            td &nbsp;
+        -}

@@ -3,11 +3,9 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
-}
 .card-title strong{
   color: white;
+  font-size: 2rem;
 }
 .red {
   color: red !important;

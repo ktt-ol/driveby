@@ -8,7 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
-app.engine('pug', require('pug').__express)
+app.engine('pug', require('pug').__express);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

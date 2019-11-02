@@ -6,5 +6,6 @@ include blocks/train
 block content
   .card.bg-dark
     .card-header
-      for destination in data
-        +train(destination)
+      table.table.table-striped.table-dark
+        for destination in data
+          +train(destination)
