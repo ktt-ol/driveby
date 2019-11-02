@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+/*jshint esversion: 6 */
 const axios = require('axios');
 
 module.exports.getJSON = ()=>{
@@ -7,4 +9,4 @@ module.exports.getJSON = ()=>{
         .then(res =>{resolve(res.data)})
         .catch(err=>reject(err))
     });   
-}
+};

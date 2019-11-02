@@ -17,14 +17,14 @@ mixin card(drive)
         - if(drive.track){
         td.blue Gleis #{drive.track} 
         - }else{
-        td &nbsp;
+        td.darkblue Hbf-Süd
         -}
 
         td #{drive.vehicle}
         td #{drive.station}
 
         - if(drive.info){
-        td.white #{drive.info} 
+        td.yellow #{drive.info} 
         - }else{
         td &nbsp;
         -}
