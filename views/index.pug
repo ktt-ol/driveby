@@ -4,5 +4,7 @@ include blocks/bus
 include blocks/train
 
 block content
-  for destination in data
-    +train(destination)
+  .card.bg-dark
+    .card-header
+      for destination in data
+        +train(destination)

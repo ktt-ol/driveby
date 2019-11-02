@@ -6,11 +6,23 @@ body {
 a {
   color: #00B7FF;
 }
+.card-title strong{
+  color: white;
+}
 .red {
-  color: red;
+  color: red !important;
   font-weight: bold;
 }
 .green {
-  color: limegreen;
+  color: limegreen !important;
   font-weight: bold;
+}
+.blue{
+  color: lightskyblue !important;
+}
+.white{
+  color: white;
+}
+.bg-lightdark{
+  background-color: gray;
 }
