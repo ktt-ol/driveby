@@ -2,7 +2,10 @@
 
 const __DATASOURCE = 2;
 const __FROMSTATION = "Oldenburg(Oldb)";
+const __TRAINSTATION = "HOLD";
 
+// const __FROMSTATION = "Bremen Hbf";
+// const __TRAINSTATION = "HB";
 
 var express = require('express');
 var router = express.Router();
@@ -116,11 +119,12 @@ router.get('/', function(req, res, next) {
       destinationData = schedule.getJSON();
       break;
     case 2:
-      destinationData = schedule.getJSONdeparture('HOLD');
+      destinationData = schedule.getJSONdeparture(__TRAINSTATION);
       break;  
     default:
       break;
   }
+
   Promise.all([destinationData]).then(d =>{
     switch (__DATASOURCE) {
       case 1:
@@ -132,7 +136,7 @@ router.get('/', function(req, res, next) {
       default:
         break;
     }
-    res.render('index', { title: 'Express', data : d});
+    res.render('index', { title: 'Driveby', data : d});
   });
 });
 

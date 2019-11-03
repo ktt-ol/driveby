@@ -5,6 +5,8 @@ include blocks/train
 
 block content
   //.h1.yellow >>>> BETA! KEINE ECHTEN WERTE! <<<<
+  .progress(style='height: 5px;')
+    .progress-bar.bg-primary(id="prg" role='progressbar' data-valuenow='25' data-valuemin='0' data-valuemax='100').rounded-bottom
   .card.bg-dark.border-info
     .card-body
       table.table.table-striped.table-dark.table-responsive.table-sm
@@ -20,3 +22,4 @@ block content
           th
         for destination in data
           +train(destination)
+  script(type="text/javascript" src="/javascripts/index.js")
